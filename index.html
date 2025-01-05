@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Grading Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .filter-section {
+            margin-top: 20px;
+        }
+
+        .filter-section label {
+            font-weight: normal;
+        }
+
+        .filter-section input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Website Grading Tool</h1>
+    </header>
+    <main>
+        <h1>Grade a Website</h1>
+        <form id="gradingForm">
+            <label for="website">Enter Website URL:</label>
+            <input type="text" id="website" name="website" placeholder="e.g., https://example.com" required>
+
+            <div class="filter-section">
+                <h2>Select Criteria</h2>
+                <label><input type="checkbox" name="criteria" value="design"> Design & Layout</label>
+                <label><input type="checkbox" name="criteria" value="functionality"> Functionality</label>
+                <label><input type="checkbox" name="criteria" value="content"> Content Quality</label>
+                <label><input type="checkbox" name="criteria" value="accessibility"> Accessibility</label>
+                <label><input type="checkbox" name="criteria" value="performance"> Performance</label>
+                <label><input type="checkbox" name="criteria" value="mobile"> Mobile Responsiveness</label>
+                <label><input type="checkbox" name="criteria" value="seo"> SEO & Visibility</label>
+                <label><input type="checkbox" name="criteria" value="security"> Trustworthiness & Security</label>
+            </div>
+
+            <button type="submit">Grade Website</button>
+        </form>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Results</h2>
+            <p id="resultsText">Grading the website...</p>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById('gradingForm');
+        const resultsDiv = document.getElementById('results');
+        const resultsText = document.getElementById('resultsText');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const website = document.getElementById('website').value;
+            const criteria = Array.from(document.querySelectorAll('input[name="criteria"]:checked'))
+                .map(input => input.value);
+
+            if (!criteria.length) {
+                alert('Please select at least one criterion.');
+                return;
+            }
+
+            resultsDiv.style.display = 'block';
+            resultsText.textContent = `Grading ${website} based on the following criteria: ${criteria.join(', ')}.`;
+
+            // Here, you can implement actual grading logic, e.g., API calls or client-side evaluations.
+        });
+    </script>
+</body>
+</html>
