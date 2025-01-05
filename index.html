@@ -64,8 +64,15 @@
             box-shadow: 0 0 10px #11998e;
         }
 
-        .filter-section {
+        .filter-container {
+            padding: 20px;
             margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-section {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -173,29 +180,31 @@
             <label for="website">Enter Website URL:</label>
             <input type="text" id="website" name="website" placeholder="e.g., https://example.com" required>
 
-            <div class="filter-section">
-                <div class="filter-column">
-                    <h3>Accessibility</h3>
-                    <label><input type="checkbox" name="criteria" value="accuracy"> Accuracy and Credibility</label>
-                    <label><input type="checkbox" name="criteria" value="altText"> Alt Text</label>
-                    <label><input type="checkbox" name="criteria" value="keyboardNavigation"> Keyboard Navigation</label>
-                    <label><input type="checkbox" name="criteria" value="contrastRatio"> Contrast Ratio</label>
-                </div>
+            <div class="filter-container">
+                <div class="filter-section">
+                    <div class="filter-column">
+                        <h3>Accessibility</h3>
+                        <label><input type="checkbox" name="criteria" value="accuracy"> Accuracy and Credibility</label>
+                        <label><input type="checkbox" name="criteria" value="altText"> Alt Text</label>
+                        <label><input type="checkbox" name="criteria" value="keyboardNavigation"> Keyboard Navigation</label>
+                        <label><input type="checkbox" name="criteria" value="contrastRatio"> Contrast Ratio</label>
+                    </div>
 
-                <div class="filter-column">
-                    <h3>Content</h3>
-                    <label><input type="checkbox" name="criteria" value="grammar"> Grammar and Spelling</label>
-                    <label><input type="checkbox" name="criteria" value="metaTags"> Meta Tags and Descriptions</label>
-                    <label><input type="checkbox" name="criteria" value="frequencyOfUpdates"> Frequency of Updates</label>
-                    <label><input type="checkbox" name="criteria" value="relevance"> Relevance</label>
-                </div>
+                    <div class="filter-column">
+                        <h3>Content</h3>
+                        <label><input type="checkbox" name="criteria" value="grammar"> Grammar and Spelling</label>
+                        <label><input type="checkbox" name="criteria" value="metaTags"> Meta Tags and Descriptions</label>
+                        <label><input type="checkbox" name="criteria" value="frequencyOfUpdates"> Frequency of Updates</label>
+                        <label><input type="checkbox" name="criteria" value="relevance"> Relevance</label>
+                    </div>
 
-                <div class="filter-column">
-                    <h3>Design</h3>
-                    <label><input type="checkbox" name="criteria" value="colorScheme"> Color Scheme</label>
-                    <label><input type="checkbox" name="criteria" value="consistency"> Consistency</label>
-                    <label><input type="checkbox" name="criteria" value="typography"> Typography</label>
-                    <label><input type="checkbox" name="criteria" value="visualAppeal"> Visual Appeal</label>
+                    <div class="filter-column">
+                        <h3>Design</h3>
+                        <label><input type="checkbox" name="criteria" value="colorScheme"> Color Scheme</label>
+                        <label><input type="checkbox" name="criteria" value="consistency"> Consistency</label>
+                        <label><input type="checkbox" name="criteria" value="typography"> Typography</label>
+                        <label><input type="checkbox" name="criteria" value="visualAppeal"> Visual Appeal</label>
+                    </div>
                 </div>
             </div>
 
