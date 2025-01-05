@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Grading Tool</title>
+    <title>AuthAI Website Grading Tool</title>
     <style>
         body {
             font-family: 'Arial Black', Gadget, sans-serif;
@@ -156,7 +156,7 @@
 
         @keyframes floatUp {
             0% {
-                transform: translateY(110vh);
+                transform: translateY(100vh);
                 opacity: 1;
             }
             100% {
@@ -231,7 +231,7 @@
     </main>
 
     <script>
-        const grades = ['A+', 'B-', 'C', 'F', 'A-', 'B+', 'D'];
+        const grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
 
         function createFloatingGrade() {
             const grade = grades[Math.floor(Math.random() * grades.length)];
@@ -239,7 +239,7 @@
             gradeElement.className = 'floating-grade';
             gradeElement.textContent = grade;
             gradeElement.style.left = Math.random() * 100 + 'vw';
-            gradeElement.style.top = '110vh'; // Start from below the screen
+            gradeElement.style.top = '100vh'; // Start from below the screen
             gradeElement.style.animationDelay = Math.random() * 4 + 's';
             document.body.appendChild(gradeElement);
 
