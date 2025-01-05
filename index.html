@@ -16,7 +16,7 @@
         }
 
         header {
-            background: #000; /* Set to pitch black */
+            background: linear-gradient(90deg, #11998e, #38ef7d);
             color: white;
             padding: 20px;
             text-align: center;
@@ -191,7 +191,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header style="background: #38ef7d;">
         <h1>Website Grading Tool</h1>
     </header>
     <main>
@@ -248,7 +248,6 @@
     <script>
         const grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
         const activeGrades = [];
-        const headerHeight = document.querySelector('header').offsetHeight;
 
         function getGradeColor(grade) {
             if (['A+', 'A', 'A-', 'B+', 'B', 'B-'].includes(grade)) return 'green';
@@ -286,7 +285,7 @@
             }, 8000);
 
             gradeElement.style.left = leftPosition + 'vw';
-            gradeElement.style.top = headerHeight + 'px';
+            gradeElement.style.top = '-10vh';
             gradeElement.style.animationDelay = Math.random() * 4 + 's';
             document.body.appendChild(gradeElement);
 
