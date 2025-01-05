@@ -154,13 +154,13 @@
             color: #38ef7d;
         }
 
-        @keyframes floatUp {
+        @keyframes floatDown {
             0% {
-                transform: translateY(100vh);
+                transform: translateY(-10vh);
                 opacity: 1;
             }
             100% {
-                transform: translateY(-10vh);
+                transform: translateY(100vh);
                 opacity: 0;
             }
         }
@@ -170,7 +170,7 @@
             font-size: 100px;
             font-family: 'Arial Black', sans-serif;
             color: rgba(255, 255, 255, 0.1);
-            animation: floatUp 8s linear infinite;
+            animation: floatDown 8s linear infinite;
             pointer-events: none;
         }
     </style>
@@ -232,37 +232,14 @@
 
     <script>
         const grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
-        const activeGrades = [];
 
         function createFloatingGrade() {
             const grade = grades[Math.floor(Math.random() * grades.length)];
             const gradeElement = document.createElement('div');
             gradeElement.className = 'floating-grade';
             gradeElement.textContent = grade;
-
-            let leftPosition;
-            let isOverlapping;
-
-            do {
-                isOverlapping = false;
-                leftPosition = Math.random() * 90;
-
-                for (const active of activeGrades) {
-                    if (Math.abs(active - leftPosition) < 10) {
-                        isOverlapping = true;
-                        break;
-                    }
-                }
-            } while (isOverlapping);
-
-            activeGrades.push(leftPosition);
-            setTimeout(() => {
-                const index = activeGrades.indexOf(leftPosition);
-                if (index > -1) activeGrades.splice(index, 1);
-            }, 8000);
-
-            gradeElement.style.left = leftPosition + 'vw';
-            gradeElement.style.top = '100vh';
+            gradeElement.style.left = Math.random() * 90 + 'vw';
+            gradeElement.style.top = '-10vh'; // Start above the screen
             gradeElement.style.animationDelay = Math.random() * 4 + 's';
             document.body.appendChild(gradeElement);
 
