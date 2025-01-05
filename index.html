@@ -169,9 +169,24 @@
             position: absolute;
             font-size: 100px;
             font-family: 'Arial Black', sans-serif;
-            color: rgba(255, 255, 255, 0.1);
             animation: floatDown 8s linear infinite;
             pointer-events: none;
+        }
+
+        .green {
+            color: #32CD32;
+        }
+
+        .yellow {
+            color: #FFD700;
+        }
+
+        .orange {
+            color: #FFA500;
+        }
+
+        .red {
+            color: #FF4500;
         }
     </style>
 </head>
@@ -234,10 +249,18 @@
         const grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
         const activeGrades = [];
 
+        function getGradeColor(grade) {
+            if (['A+', 'A', 'A-', 'B+', 'B', 'B-'].includes(grade)) return 'green';
+            if (['C+', 'C', 'C-'].includes(grade)) return 'yellow';
+            if (['D+', 'D', 'D-'].includes(grade)) return 'orange';
+            if (grade === 'F') return 'red';
+            return '';
+        }
+
         function createFloatingGrade() {
             const grade = grades[Math.floor(Math.random() * grades.length)];
             const gradeElement = document.createElement('div');
-            gradeElement.className = 'floating-grade';
+            gradeElement.className = `floating-grade ${getGradeColor(grade)}`;
             gradeElement.textContent = grade;
 
             let leftPosition;
