@@ -248,6 +248,7 @@
     <script>
         const grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
         const activeGrades = [];
+        const headerHeight = document.querySelector('header').offsetHeight;
 
         function getGradeColor(grade) {
             if (['A+', 'A', 'A-', 'B+', 'B', 'B-'].includes(grade)) return 'green';
@@ -285,7 +286,7 @@
             }, 8000);
 
             gradeElement.style.left = leftPosition + 'vw';
-            gradeElement.style.top = '-10vh';
+            gradeElement.style.top = headerHeight + 'px';
             gradeElement.style.animationDelay = Math.random() * 4 + 's';
             document.body.appendChild(gradeElement);
 
