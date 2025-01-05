@@ -23,14 +23,12 @@
             font-size: 2rem;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000; /* Ensure header is above floating letters */
+            position: relative;
+            z-index: 100; /* Ensure header is above floating letters */
         }
 
         main {
-            margin: 100px auto 20px;
+            margin: 20px auto;
             max-width: 800px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -196,7 +194,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header style="background: #000;">
         <h1>Website Grading Tool</h1>
     </header>
     <main>
