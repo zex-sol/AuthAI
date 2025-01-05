@@ -100,29 +100,9 @@
             margin-right: 10px;
         }
 
-        .functionality {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .functionality h3 {
-            color: #38ef7d;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .functionality label {
-            font-size: 1.1rem;
-            font-weight: normal;
+        .filter-container h3 {
             text-align: center;
-            color: #fff;
+            margin-bottom: 15px;
         }
 
         button {
@@ -181,6 +161,7 @@
             <input type="text" id="website" name="website" placeholder="e.g., https://example.com" required>
 
             <div class="filter-container">
+                <h3>Criteria</h3>
                 <div class="filter-section">
                     <div class="filter-column">
                         <h3>Accessibility</h3>
@@ -205,15 +186,15 @@
                         <label><input type="checkbox" name="criteria" value="typography"> Typography</label>
                         <label><input type="checkbox" name="criteria" value="visualAppeal"> Visual Appeal</label>
                     </div>
-                </div>
-            </div>
 
-            <div class="functionality">
-                <h3>Functionality</h3>
-                <label><input type="checkbox" name="criteria" value="easeOfNavigation"> Ease of Navigation</label>
-                <label><input type="checkbox" name="criteria" value="searchFunctionality"> Search Functionality</label>
-                <label><input type="checkbox" name="criteria" value="errorHandling"> Error Handling</label>
-                <label><input type="checkbox" name="criteria" value="pageLoadTime"> Page Load Time</label>
+                    <div class="filter-column">
+                        <h3>Functionality</h3>
+                        <label><input type="checkbox" name="criteria" value="easeOfNavigation"> Ease of Navigation</label>
+                        <label><input type="checkbox" name="criteria" value="searchFunctionality"> Search Functionality</label>
+                        <label><input type="checkbox" name="criteria" value="errorHandling"> Error Handling</label>
+                        <label><input type="checkbox" name="criteria" value="pageLoadTime"> Page Load Time</label>
+                    </div>
+                </div>
             </div>
 
             <button type="submit">Grade Website</button>
