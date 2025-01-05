@@ -101,7 +101,17 @@
         }
 
         .functionality {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             margin-top: 20px;
+        }
+
+        .functionality h3 {
+            color: #38ef7d;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
         button {
@@ -184,14 +194,14 @@
                         <label><input type="checkbox" name="criteria" value="typography"> Typography</label>
                         <label><input type="checkbox" name="criteria" value="visualAppeal"> Visual Appeal</label>
                     </div>
+                </div>
 
-                    <div class="filter-column">
-                        <h3>Functionality</h3>
-                        <label><input type="checkbox" name="criteria" value="easeOfNavigation"> Ease of Navigation</label>
-                        <label><input type="checkbox" name="criteria" value="searchFunctionality"> Search Functionality</label>
-                        <label><input type="checkbox" name="criteria" value="errorHandling"> Error Handling</label>
-                        <label><input type="checkbox" name="criteria" value="pageLoadTime"> Page Load Time</label>
-                    </div>
+                <div class="functionality">
+                    <h3>Functionality</h3>
+                    <label><input type="checkbox" name="criteria" value="easeOfNavigation"> Ease of Navigation</label>
+                    <label><input type="checkbox" name="criteria" value="searchFunctionality"> Search Functionality</label>
+                    <label><input type="checkbox" name="criteria" value="errorHandling"> Error Handling</label>
+                    <label><input type="checkbox" name="criteria" value="pageLoadTime"> Page Load Time</label>
                 </div>
             </div>
 
