@@ -156,11 +156,11 @@
 
         @keyframes floatUp {
             0% {
-                transform: translateY(100vh);
+                transform: translateY(110vh);
                 opacity: 1;
             }
             100% {
-                transform: translateY(-100vh);
+                transform: translateY(-10vh);
                 opacity: 0;
             }
         }
@@ -239,6 +239,7 @@
             gradeElement.className = 'floating-grade';
             gradeElement.textContent = grade;
             gradeElement.style.left = Math.random() * 100 + 'vw';
+            gradeElement.style.top = Math.random() * 10 + 'vh';
             gradeElement.style.animationDelay = Math.random() * 4 + 's';
             document.body.appendChild(gradeElement);
 
