@@ -11,6 +11,10 @@
             padding: 0;
             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         header {
@@ -32,6 +36,7 @@
             padding: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
         }
 
         h1 {
@@ -69,15 +74,13 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
         .filter-column {
             flex: 1;
             min-width: 200px;
-        }
-
-        .filter-column.centered {
-            align-self: center;
+            text-align: left;
         }
 
         .filter-column h3 {
@@ -159,7 +162,7 @@
                     <label><input type="checkbox" name="criteria" value="contrastRatio"> Contrast Ratio</label>
                 </div>
 
-                <div class="filter-column centered">
+                <div class="filter-column">
                     <h3>Content</h3>
                     <label><input type="checkbox" name="criteria" value="grammar"> Grammar and Spelling</label>
                     <label><input type="checkbox" name="criteria" value="metaTags"> Meta Tags and Descriptions</label>
